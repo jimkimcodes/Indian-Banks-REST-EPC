@@ -1,1 +1,3 @@
-web: gunicorn banks.wsgi
+web: gunicorn banks.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
